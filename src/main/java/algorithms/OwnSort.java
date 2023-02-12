@@ -2,31 +2,34 @@ package algorithms;
 
 import java.util.Arrays;
 
-public class BubbleSort {
+public class OwnSort {
+
     public static void main(String[] args) {
 
-        int[] index = new int[]{1, 5, 2, 3, 4, 6};
-        bubbleSort(index);
+        int[] arr = new int[]{1, 5, 2, 3, 4, 6};
+
+        test(arr);
     }
 
-    public static void bubbleSort(int[] arr) {
+    public static void test(int[] arr) {
         int tmp;
-        boolean statusSort = false;
+        boolean j = false;
         int c = 0;
-        while (!statusSort) {
+        while (!j) {
+            j = true;
             c++;
-            statusSort = true;
             for (int i = 0; i < arr.length - 1; i++) {
                 if (arr[i] < arr[i + 1]) {
-                    statusSort = false;
+                    j = false;
                     tmp = arr[i];
                     arr[i] = arr[i + 1];
                     arr[i + 1] = tmp;
-
                 }
-            }
-            System.out.println(c + " ----- " + "Отсортированный массив: " + Arrays.toString(arr));
-        }
 
+            }
+
+            System.out.println(c + " ----- " + "Отсортированный массив: " + Arrays.toString(arr));
+
+        }
     }
 }
