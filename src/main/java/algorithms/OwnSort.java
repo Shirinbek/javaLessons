@@ -9,6 +9,7 @@ public class OwnSort {
         int[] arr = new int[]{1, 5, 2, 3, 4, 6};
 
         test(arr);
+
     }
 
     public static void test(int[] arr) {
@@ -32,4 +33,6 @@ public class OwnSort {
 
         }
     }
+
+
 }

@@ -8,7 +8,7 @@ public class BinarySearch {
 
         int[] arr = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
 
-        System.out.println(binarySearch(arr, -1));
+        System.out.println(binarySearch(arr, 9));
 
     }
 
@@ -30,4 +30,42 @@ public class BinarySearch {
         System.out.print("Not found: ");
         return n;
     }
+}
+
+class BinarySearchRecursive {
+
+    public static void main(String[] args) {
+
+        int[] arr = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
+
+        System.out.println(binarySearchRecursive(arr, 0, 0, arr.length - 1));
+
+    }
+
+    public static int binarySearchRecursive(int[] arr, int searchNumber, int start, int end) {
+
+
+        if (searchNumber < start || searchNumber > end) {
+            System.out.print("NOT FOUND: ");
+            return searchNumber;
+        }
+
+        int middle = (start + end) / 2;
+
+        if (searchNumber == arr[middle]) return middle;
+
+        if (searchNumber > arr[middle]) {
+
+            return binarySearchRecursive(arr, searchNumber, middle + 1, end);
+        }
+
+        if (searchNumber < arr[middle]) {
+
+            return binarySearchRecursive(arr, searchNumber, start, middle - 1);
+        }
+
+        return -1;
+    }
+
+
 }
